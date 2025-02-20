@@ -1,12 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 .page {
   width: 100vw;
   height: 100vh;
-  background-color: rgb(38, 59, 52);
+  background-color: rgb(29, 40, 53);
 }
 
-.main {
+.nav {
+  display: flex;
+  background-color: rgb(40 44 52);
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  height: 7%;
+  box-sizing: border-box;
+}
+
+.leftNav,
+.midNav,
+.rightNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid black; */
+  /* flex: 1; */
+  /* height: 2.5vw; */
+  padding: 10;
+}
+
+.midNav {
+  width: 60%;
+}
+
+.leftNav,
+.rightNav {
+  display: flex;
+  justify-content: space-evenly;
+  width: 20%;
+}
+
+.title {
+  text-align: center;
+  color: azure;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 90;
+  font-size: 25;
+}
+
+.textBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  background: rgb(51 55 62);
+  border: 2px solid rgb(87 86 88);
+  border-radius: 18;
+  height: 90%;
+  gap: 10px;
+}
+
+.nav button {
+  all: unset;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 18;
+  color: rgb(119, 126, 139);
+  padding: 10;
+  padding-left: 15;
+  padding-right: 15;
+  border-radius: 10;
+}
+
+.nav button:hover {
+  font-family: 'Noto Sans', sans-serif;
+  background: rgb(56, 59, 65);
+  color: rgb(157 165 180);
+}
+
+.body {
+  display: flex;
+  height: 93%;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+.sideBar {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  width: 4%;
+  background: rgb(47 51 61);
+
+}
+
+.sideBar button {
+  all: unset;
+}
+
+.icon {
+  color: grey;
+  font-size: 24px;
+  transition: color 0.3s ease-in-out;
+}
+
+.icon:hover {
+  color: blue;
 }
