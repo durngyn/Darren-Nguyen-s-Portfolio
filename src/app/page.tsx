@@ -1,21 +1,77 @@
 "use client";
 
 import styles from "./page.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faUser, faCopy } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { ImFilesEmpty } from "react-icons/im";
+import { VscGithub, VscFiles } from "react-icons/vsc";
+import { FaLinkedin } from "react-icons/fa";
+import { LuMailPlus } from "react-icons/lu";
+
+import { useState, useEffect, useRef } from "react";
+
+
+
+
 
 export default function Home() {
-  const [color, setColor] = useState("grey");
+const[isOpen, setIsOpen] = useState(false);
+const dropdownRef = useRef(null);
+
+const toggleDropdown = () => {
+  setIsOpen((prev) => !prev);
+};
+
+// useEffect(() => {
+//   const handleClickOutside = (event: MouseEvent) => {
+//     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+//       setIsOpen(false);
+//     }
+//   };
+
+//   document.addEventListener('mosuedown', handleClickOutside);
+//   return () => document.removeEventListener("mosuedown", handleClickOutside);
+// }, []);
+
   return (
-    <div className={styles.page}>
+    <div  className={styles.page}>
       <div className ={styles.nav}>
           <div className ={styles.leftNav}>
             <img src={"images/logo.png"} alt="Logo" style={{ width: '40px', height: 'auto'}} />
+
             <button className={styles.buttonNav}>File</button>
-            <button >Projects</button>
+
+            
+            <div className={styles.dropdown}>
+              <button
+                onClick={toggleDropdown}>
+                Projects
+              </button>
+              {isOpen && ( 
+              <div className={styles.dc}>   
+                <a >Synczone</a>
+                <a >Portfolio</a>
+                
+              </div>
+              )}
+            </div>
+            <div className={styles.dropdown}>
+              <button
+                onClick={toggleDropdown}>
+                Socials
+              </button>
+              {isOpen && ( 
+              <div className={styles.dc}>   
+                <a >LinkedIn</a>
+                <a >Github</a>
+                <a >Instagram</a>
+               
+                
+              </div>
+              )}
+            </div>
+
             <button>About</button>
-            <button>Socials</button>
+
+            
           </div>
           <div className ={styles.midNav}>
             <div className ={styles.textBox}>
@@ -30,29 +86,70 @@ export default function Home() {
       <div className = {styles.body}>
         <div className = {styles.sideBar}>
           <button>
-          <FontAwesomeIcon
-            icon={faCopy}
-            style={{ color: color, fontSize: "40px"}}
-            onMouseEnter={() => setColor("blue")} 
-            onMouseLeave={() => setColor("grey")}  
-          />
+            <VscFiles  style={{ color: 'grey',fontSize: '45px' }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "rgb(215 218 224)")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "grey")}/>
           </button>
           <button>
-          <FontAwesomeIcon
-            icon={faCopy}
-            style={{ color: color, fontSize: "40px"}}
-            onMouseEnter={() => setColor("blue")} 
-            onMouseLeave={() => setColor("grey")}  
-          />
-          </button> <button>
-          <FontAwesomeIcon
-            icon={faCopy}
-            style={{ color: color, fontSize: "40px"}}
-            onMouseEnter={() => setColor("blue")} 
-            onMouseLeave={() => setColor("grey")}  
-          />
+            <LuMailPlus  style={{ color: 'grey',fontSize: '40px' }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "rgb(215 218 224)")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "grey")}/>
+          </button>
+          <button>
+            <FaLinkedin  style={{ color: 'grey',fontSize: '40px' }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "rgb(215 218 224)")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "grey")}/>
+          </button>
+          <button>
+            <VscGithub  style={{ color: 'grey',fontSize: '40px' }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "rgb(215 218 224)")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "grey")}/>
           </button>
           
+        </div>
+        <div className ={styles.mainBody}>
+
+          <div className ={styles.topBar}> 
+            <div className ={styles.exploreBox}>
+              <p className ={styles.explorer}>
+                EXPLORER
+              </p>
+            </div>
+          </div>
+          
+          <div className ={styles.bottomBody}>
+
+            <div className ={styles.leftBody}>
+
+            </div>
+
+            <div className ={styles.rightBody}>
+              <div className ={styles.directory}></div>
+              <div className ={styles.code}>
+                <code style={{fontSize: '30px', color: 'grey'}}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque mollitia pariatur, accusantium sit laboriosam atque qui asperiores porro placeat illo! Vitae quis nisi magni commodi a, suscipit aliquam deserunt unde.
+                </code>
+              </div>
+              <div className ={styles.terminal}> 
+                <div className ={styles.tab}>
+                  <button>PROBLEMS</button>
+                  <button>OUTPUT</button>
+                  <button>DEBUG CONSOLE</button>
+                  <button>TERMINAL</button>
+                  <button>PORTS</button>
+                  <button>COMMENTS</button>
+
+                </div>
+                <div className ={styles.cd}>
+                  <code className ={styles.cdText}
+                  >C:\Users\Darren Nguyen\my_projects\Synczone
+                  </code>
+                  
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
 
       </div>

@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,296;1,296&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@300..700&display=swap');
 
 .page {
   width: 100vw;
@@ -59,21 +60,57 @@
   gap: 10px;
 }
 
+.textBox:hover {
+  background: rgb(57 61 68);
+}
+
 .nav button {
   all: unset;
   font-family: 'Noto Sans', sans-serif;
   font-size: 18;
-  color: rgb(119, 126, 139);
+  color: rgb(157 165 180);
   padding: 10;
   padding-left: 15;
   padding-right: 15;
   border-radius: 10;
+  cursor: pointer;
+  user-select: none;
 }
 
 .nav button:hover {
   font-family: 'Noto Sans', sans-serif;
   background: rgb(56, 59, 65);
   color: rgb(157 165 180);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dc {
+  display: none;
+  position: absolute;
+  z-index: 1;
+
+}
+
+.dc a {
+  text-decoration: none;
+  background-color: rgb(29 31 35);
+  font-family: 'Noto Sans', sans-serif;
+  color: aliceblue;
+  border-radius: 5;
+  padding: 10;
+  display: block;
+}
+
+.dropdown:hover .dc {
+  display: block;
+}
+
+.dc a:hover {
+  background: rgb(50, 53, 66);
 }
 
 .body {
@@ -83,24 +120,139 @@
   box-sizing: border-box;
 }
 
+.mainBody {
+  display: flex;
+  background: rgb(40 44 52);
+  box-sizing: border-box;
+  width: 96%;
+  flex-direction: column;
+}
+
 .sideBar {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 4%;
   background: rgb(47 51 61);
-
+  padding-top: 10;
+  gap: 10;
+  box-sizing: border-box;
 }
 
 .sideBar button {
   all: unset;
+  padding: 15;
+  cursor: pointer;
 }
 
-.icon {
+.files {
   color: grey;
-  font-size: 24px;
-  transition: color 0.3s ease-in-out;
+  font-size: 45px;
 }
 
-.icon:hover {
-  color: blue;
+.files:hover {
+  color: rgb(215 218 224);
+}
+
+.topBar {
+  display: flex;
+  width: 100%;
+  background: rgb(33 37 43);
+  height: 5%;
+}
+
+.exploreBox {
+  display: flex;
+  padding: 5;
+  /* justify-content: center; */
+  /* border: 2px solid black; */
+  align-items: center;
+  padding-left: 30;
+}
+
+.explorer {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 18;
+  color: rgb(171 171 171);
+  font-weight: 300;
+}
+
+.bottomBody {
+  display: flex;
+  background: rgb(105, 99, 124);
+  height: 95%;
+  box-sizing: border-box;
+
+}
+
+.leftBody {
+  width: 17%;
+  background-color: rgb(33 37 43);
+  box-sizing: border-box;
+}
+
+.rightBody {
+  display: flex;
+  flex-direction: column;
+  width: 83%;
+  background-color: rgb(40 44 52);
+  /* border: 2px solid rgb(161, 6, 6); */
+  box-sizing: border-box;
+  /* overflow: hidden; */
+}
+
+.directory {
+  flex: 7;
+  background: rgb(40 44 52);
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+
+.code {
+  flex: 73;
+  background: rgb(40 44 52);
+  /* border: 2px solid rgb(49, 129, 160); */
+  box-sizing: border-box;
+}
+
+.terminal {
+  display: flex;
+  flex-direction: column;
+  flex: 12;
+  background: rgb(62, 74, 99);
+  border-top: 2px solid rgb(73, 69, 83);
+  box-sizing: border-box;
+}
+
+.tab {
+  height: 50%;
+  background: rgb(40 44 52);
+}
+
+.cd {
+  display: flex;
+
+  height: 50%;
+  background: rgb(40 44 52);
+  padding: 9;
+}
+
+.cdText {
+  /* font-family: 'Cascadia Code', monospace; */
+  font-size: 19px;
+  color: rgb(172, 173, 180);
+}
+
+.tab button {
+  all: unset;
+  padding: 10;
+  padding-left: 30;
+  color: rgb(171 171 171);
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.tab button:hover {
+  color: rgb(226, 226, 226);
 }
