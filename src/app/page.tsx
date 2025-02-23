@@ -9,16 +9,14 @@ import { LuMailPlus } from "react-icons/lu";
 import { useState, useEffect, useRef } from "react";
 
 
-
-
-
 export default function Home() {
-const[isOpen, setIsOpen] = useState(false);
-const dropdownRef = useRef(null);
+  const [isSelected, setIsSelected] = useState(false)
+// const[isOpen, setIsOpen] = useState(false);
+// const dropdownRef = useRef(null);
 
-const toggleDropdown = () => {
-  setIsOpen((prev) => !prev);
-};
+// const toggleDropdown = () => {
+//   setIsOpen((prev) => !prev);
+// };
 
 // useEffect(() => {
 //   const handleClickOutside = (event: MouseEvent) => {
@@ -35,38 +33,36 @@ const toggleDropdown = () => {
     <div  className={styles.page}>
       <div className ={styles.nav}>
           <div className ={styles.leftNav}>
-            <img src={"images/logo.png"} alt="Logo" style={{ width: '40px', height: 'auto'}} />
+            <img src={"images/logo.png"} alt="Logo" style={{ width: '30px', height: 'auto'}} />
 
             <button className={styles.buttonNav}>File</button>
 
-            
             <div className={styles.dropdown}>
-              <button
-                onClick={toggleDropdown}>
+              <button>
+                
                 Projects
               </button>
-              {isOpen && ( 
+              {/* {isOpen && (  */}
               <div className={styles.dc}>   
                 <a >Synczone</a>
                 <a >Portfolio</a>
                 
               </div>
-              )}
+              {/* )} */}
             </div>
             <div className={styles.dropdown}>
-              <button
-                onClick={toggleDropdown}>
+              <button>
+                
                 Socials
               </button>
-              {isOpen && ( 
+              {/* {isOpen && (  */}
               <div className={styles.dc}>   
                 <a >LinkedIn</a>
                 <a >Github</a>
                 <a >Instagram</a>
-               
                 
               </div>
-              )}
+              {/* )} */}
             </div>
 
             <button>About</button>
@@ -86,22 +82,22 @@ const toggleDropdown = () => {
       <div className = {styles.body}>
         <div className = {styles.sideBar}>
           <button>
-            <VscFiles  style={{ color: 'grey',fontSize: '45px' }}
+            <VscFiles  style={{ color: 'rgb(114 118 126)',fontSize: '45px' }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "rgb(215 218 224)")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "grey")}/>
           </button>
           <button>
-            <LuMailPlus  style={{ color: 'grey',fontSize: '40px' }}
+            <LuMailPlus  style={{ color: 'rgb(114 118 126)',fontSize: '40px' }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "rgb(215 218 224)")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "grey")}/>
           </button>
           <button>
-            <FaLinkedin  style={{ color: 'grey',fontSize: '40px' }}
+            <FaLinkedin  style={{ color: 'rgb(114 118 126)',fontSize: '40px' }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "rgb(215 218 224)")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "grey")}/>
           </button>
           <button>
-            <VscGithub  style={{ color: 'grey',fontSize: '40px' }}
+            <VscGithub  style={{ color: 'rgb(114 118 126)',fontSize: '40px' }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "rgb(215 218 224)")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "grey")}/>
           </button>
@@ -126,7 +122,7 @@ const toggleDropdown = () => {
             <div className ={styles.rightBody}>
               <div className ={styles.directory}></div>
               <div className ={styles.code}>
-                <code style={{fontSize: '30px', color: 'grey'}}>
+                <code style={{fontSize: '25px', color: ' rgb(172, 173, 180)'}}>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque mollitia pariatur, accusantium sit laboriosam atque qui asperiores porro placeat illo! Vitae quis nisi magni commodi a, suscipit aliquam deserunt unde.
                 </code>
               </div>
@@ -135,7 +131,7 @@ const toggleDropdown = () => {
                   <button>PROBLEMS</button>
                   <button>OUTPUT</button>
                   <button>DEBUG CONSOLE</button>
-                  <button>TERMINAL</button>
+                  <button className ={styles.term}>TERMINAL</button>
                   <button>PORTS</button>
                   <button>COMMENTS</button>
 
