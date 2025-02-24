@@ -1,8 +1,7 @@
 "use client";
 
 import styles from "./page.module.css";
-import { ImFilesEmpty } from "react-icons/im";
-import { VscGithub, VscFiles } from "react-icons/vsc";
+import { VscGithub, VscFiles, VscChevronRight } from "react-icons/vsc";
 import { FaLinkedin } from "react-icons/fa";
 import { LuMailPlus } from "react-icons/lu";
 
@@ -11,13 +10,48 @@ import { useState, useEffect, useRef } from "react";
 
 export default function Home() {
   const [isSelected, setIsSelected] = useState(false)
+
+  const [content, setContent] = useState({
+    window: <div className ={styles.leftBodyExplorer}>
+      <details className ={styles.drop}>
+      
+        <summary className ={styles.leftBodyDrop}>
+          <VscChevronRight className ={styles.arrow}/> 
+          <p>Resume</p>
+        </summary>
+        
+        <div> <VscChevronRight className ={styles.arrow}/>Resum</div>
+      </details>
+      <details className ={styles.drop}>
+        <summary className ={styles.leftBodyDrop}>
+          <VscChevronRight className ={styles.arrow}/> 
+          MY_PROJECTS
+        </summary>
+        <details className ={styles.drop}>
+          <summary><VscChevronRight className ={styles.arrowTwo}/>
+            Synczone
+          </summary>
+          <p>synczone.tsx</p>
+          <p>readme.md</p>
+        </details>
+      </details>
+            </div>,
+    text: "EXPLORER"
+  });
+
+  const [terminal, setTerminal] = useState({
+    window: 
+    <code className ={styles.cdText}
+    >C:\Users\Darren Nguyen\my_projects\Synczone
+    </code>
+   
+  });
 // const[isOpen, setIsOpen] = useState(false);
 // const dropdownRef = useRef(null);
 
 // const toggleDropdown = () => {
 //   setIsOpen((prev) => !prev);
 // };
-
 // useEffect(() => {
 //   const handleClickOutside = (event: MouseEvent) => {
 //     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -60,14 +94,14 @@ export default function Home() {
                 <a >LinkedIn</a>
                 <a >Github</a>
                 <a >Instagram</a>
+                <a >Discord</a>
                 
               </div>
               {/* )} */}
             </div>
 
             <button>About</button>
-
-            
+           
           </div>
           <div className ={styles.midNav}>
             <div className ={styles.textBox}>
@@ -81,22 +115,48 @@ export default function Home() {
       </div>
       <div className = {styles.body}>
         <div className = {styles.sideBar}>
-          <button>
+          <button onClick={() => setContent({
+              window: <div className ={styles.leftBodyExplorer}>
+              <details>
+                <summary > MS_PROJECTS</summary>
+                <details>
+                  <summary>Synczone</summary>
+                  <p>synczone.tsx</p>
+                  <p>readme.md</p>
+                </details>
+              </details>
+                    </div>,
+            text: "EXPLORER"
+          })}>
             <VscFiles  style={{ color: 'rgb(114 118 126)',fontSize: '45px' }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "rgb(215 218 224)")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "grey")}/>
           </button>
-          <button>
+          <button onClick={() => setContent({
+             window: <div className ={styles.leftBodyMail}>
+
+             </div>,
+             text: "EMAIL"
+          })}>
             <LuMailPlus  style={{ color: 'rgb(114 118 126)',fontSize: '40px' }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "rgb(215 218 224)")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "grey")}/>
           </button>
-          <button>
+          <button onClick={() => setContent({
+             window: <div className ={styles.leftBodyIn}>
+             </div>,
+             text: "LINKEDIN"
+          })}>
             <FaLinkedin  style={{ color: 'rgb(114 118 126)',fontSize: '40px' }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "rgb(215 218 224)")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "grey")}/>
           </button>
-          <button>
+          <button onClick={() => setContent({
+             window: <div className ={styles.leftBodyGithub}>
+              <iframe src="https://www.rapidtables.com/convert/color/hex-to-rgb.html?hex=acafb5"></iframe>
+             </div>,
+             text: "GITHUB"
+          })}>
             <VscGithub  style={{ color: 'rgb(114 118 126)',fontSize: '40px' }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "rgb(215 218 224)")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "grey")}/>
@@ -108,38 +168,63 @@ export default function Home() {
           <div className ={styles.topBar}> 
             <div className ={styles.exploreBox}>
               <p className ={styles.explorer}>
-                EXPLORER
+                {content.text}
               </p>
             </div>
           </div>
           
           <div className ={styles.bottomBody}>
 
-            <div className ={styles.leftBody}>
-
-            </div>
+            {content.window}
 
             <div className ={styles.rightBody}>
-              <div className ={styles.directory}></div>
+              <div className ={styles.directory}>
+                <p>Resume</p>
+              </div>
               <div className ={styles.code}>
-                <code style={{fontSize: '25px', color: ' rgb(172, 173, 180)'}}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque mollitia pariatur, accusantium sit laboriosam atque qui asperiores porro placeat illo! Vitae quis nisi magni commodi a, suscipit aliquam deserunt unde.
-                </code>
+
+                <div className ={styles.topCode}> 
+                  <div className ={styles.name}>
+                    <h1> Synczone</h1>
+                  </div>
+                  <code className ={styles.desc}>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, voluptate doloremque eaque distinctio nesciunt voluptas inventore numquam explicabo officiis tempore perspiciatis quas eveniet natus tempora necessitatibus eos, atque ad et.
+                  </code>
+                </div>
+                
+
+                <div className ={styles.bottomCode}> 
+                  <img src={"images/winston.jpg"} style={{ width: '600px', height: 'auto'}}/>
+                </div>                        
               </div>
               <div className ={styles.terminal}> 
                 <div className ={styles.tab}>
-                  <button>PROBLEMS</button>
-                  <button>OUTPUT</button>
-                  <button>DEBUG CONSOLE</button>
-                  <button className ={styles.term}>TERMINAL</button>
-                  <button>PORTS</button>
-                  <button>COMMENTS</button>
+                  <button onClick={() => setTerminal({
+                  window: <code> </code> })}>
+                  PROBLEMS
+                  </button>
+                  <button onClick={() => setTerminal({
+                  window: <code></code>
+                  })}>OUTPUT</button>
+                  <button onClick={() => setTerminal({
+                  window: <code></code>
+                  })}>DEBUG CONSOLE</button>
+                  <button onClick={() => setTerminal({
+                  window: <code className ={styles.cdText}
+                  >C:\Users\Darren Nguyen\my_projects\Synczone
+                  </code>
+                  
+                  })} className ={styles.term}>TERMINAL</button>
+                  <button onClick={() => setTerminal({
+                  window: <code></code>
+                  })}>PORTS</button>
+                  <button onClick={() => setTerminal({
+                  window: <code></code>
+                  })}>COMMENTS</button>
 
                 </div>
                 <div className ={styles.cd}>
-                  <code className ={styles.cdText}
-                  >C:\Users\Darren Nguyen\my_projects\Synczone
-                  </code>
+                  {terminal.window}
                   
                 </div>
               </div>
