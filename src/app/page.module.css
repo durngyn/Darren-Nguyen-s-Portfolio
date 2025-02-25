@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,296;1,296&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,296;1,296&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 .page {
   width: 100vw;
@@ -7,9 +6,8 @@
   background-color: rgb(29, 40, 53);
   color: rgb(172 175 181);
   font-family: 'Noto Sans', sans-serif;
+  user-select: none;
 }
-
-
 
 .nav {
   display: flex;
@@ -58,7 +56,7 @@
   align-items: center;
   width: 60%;
   background: rgb(51 55 62);
-  /* border: 1.5px solid rgb(87 86 88); */
+  border: 1.5px solid rgb(87 86 88);
   border-radius: 10;
   height: 90%;
   gap: 10px;
@@ -211,21 +209,76 @@
   display: contents;
 }
 
-.drop div {
+.drop .spacing {
   display: flex;
-  border: 2px solid white;
+  /* border-left: 1px solid white; */
   /* justify-items: center; */
   /* align-items: center; */
-  padding-left: 25;
+  padding-left: 15;
+  padding-top: 10;
+  padding-bottom: 10;
   /* padding: 10; */
 }
 
+.drop .spacingTwo {
+  display: flex;
+  border-left: 1.5px solid rgb(110, 110, 110);
+  /* justify-items: center; */
+  align-items: center;
+  padding-left: 15;
+  padding-top: 10;
+  padding-bottom: 10;
+  /* padding: 10; */
+}
+
+.drop {
+  display: flex;
+  flex-direction: column;
+  border: 1 solid wheat;
+}
+
 .leftBodyDrop {
+  /* border: 2px solid white; */
+  background: rgb(40 44 52);
   display: flex;
   padding: 0;
   margin: 0;
 }
 
+.leftBodyDrop p {
+  font-family: "Roboto", serif;
+  font-weight: 600;
+  color: rgb(204, 204, 204)
+    /* background: rgb(47 51 61); */
+}
+
+.arrow {
+  margin-left: 5;
+  margin-right: 5;
+}
+
+.pdf {
+  margin-right: 5;
+  color: rgb(239 83 80);
+}
+
+.animation {
+  display: flex;
+  /* max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out; */
+}
+
+.parentSpacing {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.parentSpacing:hover {
+  background: rgb(40 44 52);
+}
 
 .leftBodyMail {
   width: 17%;
@@ -277,7 +330,7 @@
   flex: 1;
   height: 5%;
   background: rgb(40 44 52);
-  border: 2px solid black;
+  /* border: 2px solid black; */
   box-sizing: border-box;
 }
 

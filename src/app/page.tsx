@@ -2,7 +2,7 @@
 
 import styles from "./page.module.css";
 import { VscGithub, VscFiles, VscChevronRight } from "react-icons/vsc";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaFilePdf } from "react-icons/fa";
 import { LuMailPlus } from "react-icons/lu";
 
 import { useState, useEffect, useRef } from "react";
@@ -14,22 +14,30 @@ export default function Home() {
   const [content, setContent] = useState({
     window: <div className ={styles.leftBodyExplorer}>
       <details className ={styles.drop}>
-      
         <summary className ={styles.leftBodyDrop}>
-          <VscChevronRight className ={styles.arrow}/> 
-          <p>Resume</p>
+            <VscChevronRight className ={styles.arrow}/> 
+            <p>RESUME</p>
         </summary>
-        
-        <div> <VscChevronRight className ={styles.arrow}/>Resum</div>
+        <summary className ={styles.parentSpacing}>
+          <div className ={styles.spacing}> </div>
+          <div className ={styles.spacingTwo}>    
+            <FaFilePdf className ={styles.pdf}/>    
+            Resume(2025).pdf       
+          </div>
+        </summary>
       </details>
       <details className ={styles.drop}>
         <summary className ={styles.leftBodyDrop}>
           <VscChevronRight className ={styles.arrow}/> 
-          MY_PROJECTS
+          <p>MY_PROJECTS</p>
         </summary>
         <details className ={styles.drop}>
-          <summary><VscChevronRight className ={styles.arrowTwo}/>
-            Synczone
+          <summary className ={styles.parentSpacing}>
+            <div className ={styles.spacing}> </div>
+            <div className ={styles.spacingTwo}>        
+              <VscChevronRight className ={styles.arrow}/>
+              Synczone     
+            </div>          
           </summary>
           <p>synczone.tsx</p>
           <p>readme.md</p>
@@ -117,10 +125,31 @@ export default function Home() {
         <div className = {styles.sideBar}>
           <button onClick={() => setContent({
               window: <div className ={styles.leftBodyExplorer}>
-              <details>
-                <summary > MS_PROJECTS</summary>
-                <details>
-                  <summary>Synczone</summary>
+              <details className ={styles.drop}>
+                <summary className ={styles.leftBodyDrop}>
+                    <VscChevronRight className ={styles.arrow}/> 
+                    <p>RESUME</p>
+                </summary>
+                <summary className ={styles.parentSpacing}>
+                  <div className ={styles.spacing}> </div>
+                  <div className ={styles.spacingTwo}>        
+                    Resume(2025).pdf       
+                  </div>
+                </summary>
+              </details>
+              <details className ={styles.drop}>
+                <summary className ={styles.leftBodyDrop}>
+                  <VscChevronRight className ={styles.arrow}/> 
+                  <p>MY_PROJECTS</p>
+                </summary>
+                <details className ={styles.drop}>
+                  <summary className ={styles.parentSpacing}>
+                    <div className ={styles.spacing}> </div>
+                    <div className ={styles.spacingTwo}>        
+                      <VscChevronRight className ={styles.arrowTwo}/>
+                      Synczone     
+                    </div>          
+                  </summary>
                   <p>synczone.tsx</p>
                   <p>readme.md</p>
                 </details>
