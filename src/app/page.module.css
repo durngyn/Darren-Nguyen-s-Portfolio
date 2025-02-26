@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,296;1,296&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+
+
 .page {
   width: 100vw;
   height: 100vh;
@@ -70,7 +73,7 @@
   color: azure;
 }
 
-.nav button {
+.nav .navButton {
   all: unset;
   font-family: 'Noto Sans', sans-serif;
   font-size: 18;
@@ -83,7 +86,7 @@
   user-select: none;
 }
 
-.nav button:hover {
+.nav .navButton:hover {
   font-family: 'Noto Sans', sans-serif;
   background: rgb(56, 59, 65);
   color: rgb(157 165 180);
@@ -105,7 +108,9 @@
 
 }
 
-.dc a {
+.dc a,
+.dc .buttonNav {
+  all: unset;
   text-decoration: none;
 
   font-family: 'Noto Sans', sans-serif;
@@ -119,7 +124,8 @@
   display: block;
 }
 
-.dc a:hover {
+.dc a:hover,
+.dc .buttonNav:hover {
   background: rgb(44 49 58);
 }
 
@@ -192,7 +198,6 @@
   background: rgb(105, 99, 124);
   height: 95%;
   box-sizing: border-box;
-
 }
 
 .leftBodyExplorer {
@@ -211,31 +216,71 @@
 
 .drop .spacing {
   display: flex;
-  /* border-left: 1px solid white; */
+  height: 100%;
+  /* border-right: 1px solid rgb(110, 110, 110); */
   /* justify-items: center; */
   /* align-items: center; */
   padding-left: 15;
   padding-top: 10;
   padding-bottom: 10;
+  border-right: 1px solid transparent;
+  transition: border 0.2s ease-in-out;
   /* padding: 10; */
+}
+
+.leftBodyExplorer:hover .spacing {
+  border-right: 1px solid rgb(110, 110, 110);
+  box-sizing: border-box;
 }
 
 .drop .spacingTwo {
   display: flex;
-  border-left: 1.5px solid rgb(110, 110, 110);
+  /* border-left: 1.5px solid rgb(110, 110, 110); */
   /* justify-items: center; */
   align-items: center;
-  padding-left: 15;
+  padding-left: 8;
   padding-top: 10;
   padding-bottom: 10;
+  box-sizing: border-box;
   /* padding: 10; */
 }
 
-.drop {
+
+.drop .spacingThree {
+  display: flex;
+  /* border-left: 1.5px solid rgb(110, 110, 110); */
+  /* justify-items: center; */
+  align-items: center;
+  padding-left: 20;
+  margin-left: 16;
+  padding-top: 10;
+  padding-bottom: 10;
+  height: 100%;
+  box-sizing: border-box;
+  border-left: 1.5px solid transparent;
+  transition: border 0.2s ease-in-out;
+  /* padding: 10; */
+}
+
+.leftBodyExplorer:hover .spacingThree {
+  border-left: 1.5px solid rgb(110, 110, 110, .5);
+
+  box-sizing: border-box;
+}
+
+.drop,
+.dropTwo {
   display: flex;
   flex-direction: column;
   border: 1 solid wheat;
+  box-sizing: border-box;
 }
+
+.drop[open] .arrow,
+.dropTwo[open] .arrowTwo {
+  transform: rotate(90deg);
+}
+
 
 .leftBodyDrop {
   /* border: 2px solid white; */
@@ -262,6 +307,22 @@
   color: rgb(239 83 80);
 }
 
+.folder {
+  margin-right: 5;
+  margin-left: 5;
+  color: rgb(31 240 156);
+}
+
+.react {
+  margin-right: 5;
+  color: rgb(79, 176, 214);
+}
+
+.info {
+  margin-right: 5;
+  color: rgb(79, 126, 214);
+}
+
 .animation {
   display: flex;
   /* max-height: 0;
@@ -274,6 +335,7 @@
   margin: 0;
   display: flex;
   flex-direction: row;
+  box-sizing: border-box;
 }
 
 .parentSpacing:hover {
@@ -295,10 +357,6 @@
   color: rgb(255, 255, 255);
   text-align: center;
   align-items: center;
-}
-
-.drop[open] .arrow {
-  transform: rotate(90deg);
 }
 
 .leftBodyIn {
