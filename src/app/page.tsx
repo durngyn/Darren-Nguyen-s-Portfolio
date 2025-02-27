@@ -34,22 +34,22 @@ export default function Home() {
         .typeString("^")
         .pauseFor(280) 
         .typeString(")")
-        .pauseFor(1000) 
+        .pauseFor(3000) 
         .deleteChars(7)
         .pauseFor(230) 
         .deleteChars(24) 
         .typeString("This is my Portfolio Site!") //26
-        .pauseFor(1000)
-        .deleteAll() 
-        .typeString("For this site, I used =>")
-        .pauseFor(300) 
+        .pauseFor(3000)
+        .deleteChars(18) 
+        .typeString(" site, I used =>")
+        .pauseFor(1500) 
         .deleteAll()
         .typeString("HTML")
         .pauseFor(300)        
         .typeString(", CSS")
         .pauseFor(300) 
-        .typeString(", & React TypeScript")
-        .pauseFor(1000) 
+        .typeString(", & React TypeScript (TSX)")
+        .pauseFor(3000) 
         .deleteChars(15)
         .pauseFor(300) 
         .deleteAll()
@@ -100,9 +100,9 @@ export default function Home() {
               Portfolio    
             </div>          
           </summary>
-          <summary className ={styles.parentSpacing}>
+          <summary className ={styles.parentSpacing} onClick={() => setWindow({img: "images/winston.jpg", name: "Portfolio"})}>
           <div className ={styles.spacing}> </div>
-          <div className ={styles.spacingThree} onClick={() => setWindow({img: "images/winston.jpg", name: "Portfolio"})}>    
+          <div className ={styles.spacingThree} >    
             <FaReact className ={styles.react}/>    
             Portfolio.tsx      
           </div>
@@ -125,9 +125,9 @@ export default function Home() {
               Synczone     
             </div>          
           </summary>
-          <summary className ={styles.parentSpacing}>
+          <summary className ={styles.parentSpacing } onClick={() => setWindow({img: "images/jett.jpg", name: "Synczone"})}>
             <div className ={styles.spacing}> </div>
-            <div className ={styles.spacingThree} onClick={() => setWindow({img: "images/jett.jpg", name: "Synczone"})}>    
+            <div className ={styles.spacingThree} >    
             <FaReact className ={styles.react}/>    
               Synczone.tsx      
             </div>
@@ -149,9 +149,9 @@ export default function Home() {
               SpotifyDist.    
             </div>          
           </summary>
-          <summary className ={styles.parentSpacing}>
+          <summary className ={styles.parentSpacing} onClick={() => setWindow({img: "images/scout.jpg", name: "Spotify"})}>
           <div className ={styles.spacing}> </div>
-          <div className ={styles.spacingThree} onClick={() => setWindow({img: "images/scout.jpg", name: "Spotify"})}>    
+          <div className ={styles.spacingThree} >    
             <FaReact className ={styles.react}/>    
             Spotify.tsx      
           </div>
@@ -224,18 +224,15 @@ export default function Home() {
               {/* )} */}
             </div>
 
-            <button className={styles.navButton}>About</button>
-           
+            <button className={styles.navButton}>About</button>         
           </div>
           <div className ={styles.midNav}>
             <div className ={styles.textBox}>
               {/* <img src={"images/mag.png"} alt="Logo"  /> */}
               <h1 className = {styles.title}>
-                <div ref={textContainerRef}></div>
-
-                <span 
-                  style={{ position: "absolute" }}>
-                </span>
+              
+              <div style={{ display: 'inline-block' }} ref={textContainerRef}></div>
+               <BlinkingCursor />                                           
               </h1>            
             </div>
           </div>
@@ -246,101 +243,101 @@ export default function Home() {
       <div className = {styles.body}>
         <div className = {styles.sideBar}>
           <button onClick={() => setContent({
-               window: <div className ={styles.leftBodyExplorer}>
-               <details className ={styles.drop}>
-                 <summary className ={styles.leftBodyDrop}>
-                     <VscChevronRight className ={styles.arrow}/> 
-                     <p>RESUME</p>
-                 </summary>
-                 <summary className ={styles.parentSpacing}>
-                   <div className ={styles.spacing}> </div>
-                   <div className ={styles.spacingTwo}>    
-                     <FaFilePdf className ={styles.pdf}/>    
-                     Resume(2025).pdf       
-                   </div>
-                 </summary>
-               </details>
-               <details className ={styles.drop}>
-                 <summary className ={styles.leftBodyDrop}>
-                   <VscChevronRight className ={styles.arrow}/> 
-                   <p>MY_PROJECTS</p>
-                 </summary>
-                 <details className ={styles.dropTwo}>
-                   <summary className ={styles.parentSpacing}>
-                     <div className ={styles.spacing}> </div>
-                     <div className ={styles.spacingTwo}>        
-                       <VscChevronRight className ={styles.arrowTwo}/>
-                       <FaFolder className ={styles.folder}/>
-                       Portfolio    
-                     </div>          
-                   </summary>
-                   <summary className ={styles.parentSpacing}>
-                   <div className ={styles.spacing}> </div>
-                   <div className ={styles.spacingThree}>    
-                     <FaReact className ={styles.react}/>    
-                     Synczone.tsx      
-                   </div>
-                   </summary>
-                   <summary className ={styles.parentSpacing}>
-                   <div className ={styles.spacing}> </div>
-                   <div className ={styles.spacingThree}>    
-                   <IoIosInformationCircle className ={styles.info}/> 
-                     README.md      
-                   </div>
-                 </summary>
-                 </details>
-         
-                 <details className ={styles.dropTwo}>
-                   <summary className ={styles.parentSpacing}>
-                     <div className ={styles.spacing}> </div>
-                     <div className ={styles.spacingTwo}>        
-                       <VscChevronRight className ={styles.arrowTwo}/>
-                       <FaFolder className ={styles.folder}/>
-                       Synczone     
-                     </div>          
-                   </summary>
-                   <summary className ={styles.parentSpacing}>
-                     <div className ={styles.spacing}> </div>
-                     <div className ={styles.spacingThree}>    
-                     <FaReact className ={styles.react}/>    
-                       Synczone.tsx      
-                     </div>
-                   </summary>
-                   <summary className ={styles.parentSpacing}>
-                   <div className ={styles.spacing}> </div>
-                   <div className ={styles.spacingThree}>    
-                   <IoIosInformationCircle className ={styles.info}/>   
-                     README.md      
-                   </div>
-                 </summary>
-                 </details>
-                 <details className ={styles.dropTwo}>
-                   <summary className ={styles.parentSpacing}>
-                     <div className ={styles.spacing}> </div>
-                     <div className ={styles.spacingTwo}>        
-                       <VscChevronRight className ={styles.arrowTwo}/>
-                       <FaFolder className ={styles.folder}/>
-                       Spotify Dist.    
-                     </div>          
-                   </summary>
-                   <summary className ={styles.parentSpacing}>
-                   <div className ={styles.spacing}> </div>
-                   <div className ={styles.spacingThree}>    
-                     <FaReact className ={styles.react}/>    
-                     Synczone.tsx      
-                   </div>
-                   </summary>
-                   <summary className ={styles.parentSpacing}>
-                   <div className ={styles.spacing}> </div>
-                   <div className ={styles.spacingThree}>    
-                     <IoIosInformationCircle className ={styles.info}/>    
-                     README.md      
-                   </div>
-                 </summary>
-                 </details>
-               </details>
-                     </div>,
-             text: "EXPLORER"
+              window: <div className ={styles.leftBodyExplorer}>
+              <details className ={styles.drop}>
+                <summary className ={styles.leftBodyDrop}>
+                    <VscChevronRight className ={styles.arrow}/> 
+                    <p>RESUME</p>
+                </summary>
+                <summary className ={styles.parentSpacing}>
+                  <div className ={styles.spacing}> </div>
+                  <div className ={styles.spacingTwo}>    
+                    <FaFilePdf className ={styles.pdf}/>    
+                    Resume(2025).pdf       
+                  </div>
+                </summary>
+              </details>
+              <details className ={styles.drop}>
+                <summary className ={styles.leftBodyDrop}>
+                  <VscChevronRight className ={styles.arrow}/> 
+                  <p>MY_PROJECTS</p>
+                </summary>
+                <details className ={styles.dropTwo}>
+                  <summary className ={styles.parentSpacing}>
+                    <div className ={styles.spacing}> </div>
+                    <div className ={styles.spacingTwo}>        
+                      <VscChevronRight className ={styles.arrowTwo}/>
+                      <FaFolder className ={styles.folder}/>
+                      Portfolio    
+                    </div>          
+                  </summary>
+                  <summary className ={styles.parentSpacing}>
+                  <div className ={styles.spacing}> </div>
+                  <div className ={styles.spacingThree} onClick={() => setWindow({img: "images/winston.jpg", name: "Portfolio"})}>    
+                    <FaReact className ={styles.react}/>    
+                    Portfolio.tsx      
+                  </div>
+                  </summary>
+                  <summary className ={styles.parentSpacing}>
+                  <div className ={styles.spacing}> </div>
+                  <div className ={styles.spacingThree}>    
+                  <IoIosInformationCircle className ={styles.info}/> 
+                    README.md      
+                  </div>
+                </summary>
+                </details>
+        
+                <details className ={styles.dropTwo}>
+                  <summary className ={styles.parentSpacing}>
+                    <div className ={styles.spacing}> </div>
+                    <div className ={styles.spacingTwo}>        
+                      <VscChevronRight className ={styles.arrowTwo}/>
+                      <FaFolder className ={styles.folder}/>
+                      Synczone     
+                    </div>          
+                  </summary>
+                  <summary className ={styles.parentSpacing}>
+                    <div className ={styles.spacing}> </div>
+                    <div className ={styles.spacingThree} onClick={() => setWindow({img: "images/jett.jpg", name: "Synczone"})}>    
+                    <FaReact className ={styles.react}/>    
+                      Synczone.tsx      
+                    </div>
+                  </summary>
+                  <summary className ={styles.parentSpacing}>
+                  <div className ={styles.spacing}> </div>
+                  <div className ={styles.spacingThree}>    
+                  <IoIosInformationCircle className ={styles.info}/>   
+                    README.md      
+                  </div>
+                </summary>
+                </details>
+                <details className ={styles.dropTwo}>
+                  <summary className ={styles.parentSpacing}>
+                    <div className ={styles.spacing}> </div>
+                    <div className ={styles.spacingTwo}>        
+                      <VscChevronRight className ={styles.arrowTwo}/>
+                      <FaFolder className ={styles.folder}/>
+                      SpotifyDist.    
+                    </div>          
+                  </summary>
+                  <summary className ={styles.parentSpacing}>
+                  <div className ={styles.spacing}> </div>
+                  <div className ={styles.spacingThree} onClick={() => setWindow({img: "images/scout.jpg", name: "Spotify"})}>    
+                    <FaReact className ={styles.react}/>    
+                    Spotify.tsx      
+                  </div>
+                  </summary>
+                  <summary className ={styles.parentSpacing}>
+                  <div className ={styles.spacing}> </div>
+                  <div className ={styles.spacingThree}>    
+                    <IoIosInformationCircle className ={styles.info}/>    
+                    README.md      
+                  </div>
+                </summary>
+                </details>
+              </details>
+                    </div>,
+            text: "EXPLORER"
           })}>
             <VscFiles  style={{ color: 'rgb(114 118 126)',fontSize: '45px' }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "rgb(215 218 224)")}

@@ -51,18 +51,25 @@
   font-family: 'Noto Sans', sans-serif;
   font-weight: 90;
   font-size: 25;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  flex-direction: column;
 }
 
 .textBox {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  flex-direction: column;
   width: 60%;
   background: rgb(51 55 62);
   border: 1.5px solid rgb(87 86 88);
   border-radius: 10;
-  height: 90%;
-  gap: 10px;
+  height: 100%;
+
 }
 
 .textBox:hover {
